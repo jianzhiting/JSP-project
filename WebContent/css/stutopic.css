@@ -1,0 +1,56 @@
+.topic{
+	float: left;
+}
+#left{
+	height: 100%;
+	width: 54%;
+	text-align: center;
+	margin: 0 3% 0 0;
+}
+#right{
+	height: 98%;
+	width: 40%;
+	text-align: center;
+	margin: 0 0 0 2%;
+	border: 1px orange solid;
+}
+table{
+	width: 100%;
+	padding:2px
+}
+th,td{
+	border: 1px orange solid;
+}
+.a{
+	width: 60%;
+}
+a{
+	color: black;
+}
+.b{
+	width: 20%;
+	border-left: 1px orange solid;
+}
+.topic_name{
+	height: 40px;
+	width: 65%;
+	margin: 15px auto;
+	border-radius: 3px;
+	font-size: 20px;
+    text-align: left;
+    color: black;
+}
+.down{
+	height: 40px;
+	margin-top: 13%;
+	border-radius: 3px;
+	font-size: 20px;
+	width: 90px;
+    color: black;
+}
+.bottom{
+	position: absolute; 
+	bottom: 2%;
+	text-align: center;
+	width: 40%
+}

@@ -1,0 +1,105 @@
+<script type="text/javascript">
+function func(){
+	<%
+	db.rs = db.stmt.executeQuery("select review_state from tb_open_report where student_id='"+id+"'");
+	db.rs.next();
+	String review_state = db.rs.getString(1).toString();
+	if(!review_state.equals("2")){
+	%>
+		alert("当前状态下不能提交");
+		return false;
+	<%
+	}
+	else{
+	%>
+	confirm()
+	<%
+	}
+	%>
+}
+</script>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="com.DataBase" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title></title>
+<link rel="stylesheet" href="/project/css/base.css"> 
+<link rel="stylesheet" href="/project/css/topic.css">
+</head>
+<body>
+<%
+	DataBase db = new DataBase();
+	String id = session.getAttribute("id").toString();//id=01
+   
+    String director = "";
+	String introduction = "";
+	String message_name = "";
+	request.setCharacterEncoding("utf-8");
+	
+    request.setCharacterEncoding("utf-8");
+	Object ob = request.getParameter("message_id");
+	if(ob != null){
+		message_name = request.getParameter("message_name");
+		db.rs = db.stmt.executeQuery("select message_name from tb_message where message_id='"+message_id+"'");
+		db.rs.next();
+		message_name = db.rs.getString(1).toString();
+		String sql = "select introduction from tb_message where message_id='"+message_id+"' and message_name='"+message_name+"'";
+		db.rs = db.stmt.executeQuery(sql);
+		db.rs.next();
+		introduction = db.rs.getString(1).toString();
+	}
+%>
+	<div class="topic" id="left">
+		<table>
+			<tr>
+			  <th class="a">公告标题</th>
+			  <th class="b">发布状态</th>
+			</tr>
+			<%
+			try {
+				db.rs = db.stmt.executeQuery("select message_name,message_id,review_state from tb_message");
+					System.out.println("------------------");
+				while(db.rs.next()){
+					String str=db.rs.getString(3).trim();
+					int state=0;
+					if(str.equals("0"))//未审核
+					str="未发布";
+					if(str.equals("1"))//已发布
+					str="已发布";
+			%>
+			<tr>
+			  <td  class="a"><a href="message.jsp?message_id=<%=db.rs.getString(2) %>&message_name=<%=db.rs.getString(1)%>"><%=db.rs.getString(1)%></a></td>
+			  <td class="b"><%="已发布" %></td>
+			</tr>
+			<%
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	db.Close();
+%>
+		</table>
+	</div>
+	<div class="topic" id="right">
+		<h1 style="font-size: 27px">详细内容</h1>
+		<div id="login">
+            <form action="/project/message" method="post" id="f">
+            	公告题目：<input type="text" name="message_name" class="topic_name" value="<%=message_name %>"><br/>
+            	<p>详细内容：</p>
+            	<textarea name="introduction" form="f" maxlength="50"><%=introduction%></textarea><br/><br/>
+                <input type="submit" name="pub" class="down" value="发&nbsp布">
+                <input type="reset" class="down" value="重&nbsp置">
+            </form>
+    </div>
+	</div>
+</body>
+<style>
+</style>
+</html>

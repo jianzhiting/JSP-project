@@ -1,0 +1,103 @@
+.topic{
+	width: 47%;
+	float: left;
+}
+#left{
+	height: 100%;
+	text-align: center;
+	margin: 0 3% 0 0;
+}
+#right{
+	height: 98%;
+	text-align: center;
+	margin: 0 0 0 2%;
+	border: 1px orange solid;
+}
+#stuleft{
+	height: 70%;
+	text-align: center;
+	margin: 0 3% 0 0;
+}
+#sturight{
+	height: 68%;
+	text-align: center;
+	margin: 0 0 0 2%;
+	border: 1px orange solid;
+}
+.stu{
+	height: 10%;
+	width: 98%;
+	margin-top: 5%;
+	float: left;
+}
+table{
+	width: 100%;
+	padding:2px
+}
+th,td{
+	border: 1px orange solid;
+}
+.a{
+	width: 70%;
+}
+a{
+	color: black;
+}
+.b{
+	width: 30%;
+	border-left: 1px orange solid;
+}
+.stuwa{
+	width: 12.5%;
+	border-left: 1px orange solid;
+}
+.topic_name{
+	height: 40px;
+	width: 65%;
+	margin: 15px auto;
+	border-radius: 3px;
+	font-size: 18px;
+    text-align: left;
+    color: black;
+}
+form p{
+	height: 25px;
+	margin: 0 65% 0 0;
+}
+form textarea{
+	height: 300px;
+	width: 77%;
+	font-size: 22px;
+	font-family: "SimHei";
+}
+.down{
+	height: 40px;
+	border-radius: 3px;
+	font-size: 20px;
+	width: 90px;
+    color: black;
+}
+.d{
+	height: 27px;
+	border-radius: 3px;
+	font-size: 20px;
+	width: 80px;
+    color: black;
+}
+.choose{
+	height:23px;
+	border-radius: 3px;
+	font-size: 18px;
+	width: 60px;
+	color: white;
+	background: grey;
+}
+.bottom{
+	position: absolute; 
+	bottom: 2%;
+	text-align: center;
+	width: 47%
+}
+span{
+	margin-left: 3%;
+}

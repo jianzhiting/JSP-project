@@ -1,0 +1,46 @@
+#head{
+    position: relative;
+    height: 7%;
+    width: 100%;
+    background: #272822;
+}
+#head ul li{
+    display: inline;
+    color: #fff;
+    margin-left: 15%;
+    padding: 7px 9px;
+    line-height: 7vh;
+}
+.lock{
+    background: #AF8352;
+}
+#head ul li.welcome{
+    position: absolute;
+    height: 83%;
+    width: 14%;
+    left: 83%;
+    top: -13%;
+    margin: auto;
+}
+a.quit{
+	padding-left: 70px;
+}
+#menuFrame{
+    position: relative;
+    width: 71%;
+    height: 80%;
+    overflow: hidden;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(8%, 9%);
+    transition: width 0.4s ease;
+    -webkit-transition: width 0.4s ease;
+    -moz-transition: width 0.4s ease;
+    -o-transition: width 0.4s ease;
+    -ms-transition: width 0.4s ease;
+}
+a{
+	color: #fff;
+}
